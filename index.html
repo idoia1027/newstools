@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouTube 学习助手 · Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-50 min-h-screen">
+  <div class="min-h-screen flex flex-col">
+    <!-- 顶部导航 -->
+    <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-20">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-400 to-cyan-500 flex items-center justify-center text-xs font-bold">YA</div>
+          <div>
+            <div class="text-sm font-semibold tracking-wide">YouTube 学习助手 · Demo</div>
+            <div class="text-xs text-slate-400">基于：Prompt Engineering & AI Red Teaming</div>
+          </div>
+        </div>
+        <button class="px-3 py-1.5 rounded-full text-xs bg-emerald-500/10 text-emerald-300 border border-emerald-400/40">Demo 预览 · 用户视角</button>
+      </div>
+    </header>
+
+    <!-- 主体内容 -->
+    <main class="flex-1 max-w-6xl mx-auto px-4 py-6 grid grid-cols-1 lg:grid-cols-[1.6fr,1.1fr] gap-6">
+      <!-- 左侧主内容 -->
+      <section class="space-y-6">
+        <!-- 链接输入区（仅演示态） -->
+        <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-4 flex flex-col gap-3">
+          <div class="flex items-center justify-between mb-1">
+            <div class="text-xs font-medium text-slate-300">输入视频链接（Demo 已预填）</div>
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-400">Workflow① 自动触发</span>
+          </div>
+          <div class="flex flex-col md:flex-row gap-2">
+            <div class="flex-1 bg-slate-950/60 border border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-300 flex items-center gap-2">
+              <span class="text-slate-500">🔗</span>
+              <span class="truncate">https://www.youtube.com/watch?v=_BRhRh7mOX0</span>
+            </div>
+            <button class="px-4 py-2 rounded-xl bg-emerald-500 text-slate-950 text-xs font-semibold shadow-sm shadow-emerald-500/30">解析并生成摘要</button>
+          </div>
+        </div>
+
+        <!-- 视频信息卡片 -->
+        <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-4 flex flex-col md:flex-row gap-4">
+          <div class="relative w-full md:w-56 aspect-video bg-slate-800 rounded-xl overflow-hidden flex items-center justify-center text-xs text-slate-400">
+            <span class="absolute inset-0 bg-gradient-to-tr from-slate-900 via-slate-800 to-slate-900 opacity-80"></span>
+            <span class="relative">视频预览占位 · Thumbnail</span>
+            <button class="absolute inset-0 flex items-center justify-center">
+              <div class="w-10 h-10 rounded-full bg-slate-950/80 border border-slate-700 flex items-center justify-center ml-2">
+                <div class="w-0 h-0 border-t-[7px] border-t-transparent border-b-[7px] border-b-transparent border-l-[11px] border-l-slate-200 ml-1"></div>
+              </div>
+            </button>
+            <div class="absolute bottom-2 right-2 text-[10px] px-2 py-0.5 rounded-full bg-black/70 text-slate-100">17:03</div>
+          </div>
+          <div class="flex-1 flex flex-col justify-between gap-3">
+            <div class="space-y-1">
+              <h1 class="text-sm md:text-base font-semibold text-slate-50">Prompt Engineering and AI Red Teaming — Sander Schulhoff</h1>
+              <div class="text-xs text-slate-400 flex flex-wrap gap-2">
+                <span>来源：LearnPrompting / HackAPrompt</span>
+                <span>·</span>
+                <span>时长：17 分钟</span>
+                <span>·</span>
+                <span>主题：Prompt Engineering · Red Teaming · LLM Safety</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2 text-[10px] text-slate-300">
+              <span class="px-2 py-1 rounded-full bg-slate-800/80 border border-slate-700">🧠 Prompt Engineering</span>
+              <span class="px-2 py-1 rounded-full bg-slate-800/80 border border-slate-700">🛡️ Red Teaming</span>
+              <span class="px-2 py-1 rounded-full bg-slate-800/80 border border-slate-700">🏢 Enterprise LLM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 核心概要 -->
+        <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-4 space-y-3">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-emerald-500/10 flex items-center justify-center text-xs">①</span>
+              <h2 class="text-xs font-semibold text-slate-100 tracking-wide">100–200 字高密度核心概要</h2>
+            </div>
+            <span class="text-[10px] text-emerald-300 bg-emerald-500/10 border border-emerald-400/30 px-2 py-0.5 rounded-full">自动生成 · Free</span>
+          </div>
+          <p class="text-xs leading-relaxed text-slate-200">
+            本视频讲述 Prompt Engineering 如何在高风险应用中提升可靠性，强调“任务定义比技巧更重要”。Sander 指出模型失败往往来自研发者错误假设，而不是模型能力不足。Red Teaming 的本质是系统性暴露失败模式，并通过控制输入、补充上下文、结构化步骤，把模型从“随机好答”变成“稳定成功”。对于企业级场景，Prompt 工程不仅是技法，而是一种降低风险的产品思维。
+          </p>
+        </div>
+
+        <!-- 核心段落 + 时间戳 -->
+        <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-4 space-y-3">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-sky-500/10 flex items-center justify-center text-xs">②</span>
+              <h2 class="text-xs font-semibold text-slate-100 tracking-wide">核心段落 · 搭配时间戳</h2>
+            </div>
+            <span class="text-[10px] text-sky-300 bg-sky-500/10 border border-sky-400/30 px-2 py-0.5 rounded-full">点击时间跳转原视频</span>
+          </div>
+          <div class="space-y-2">
+            <button class="w-full text-left flex gap-3 bg-slate-950/40 hover:bg-slate-800/60 border border-slate-800 rounded-xl px-3 py-2.5 transition">
+              <div class="text-[10px] font-mono px-2 py-1 rounded-full bg-slate-900 text-sky-300 border border-sky-500/40 self-start">01:45</div>
+              <p class="text-xs text-slate-200 leading-relaxed">
+                Prompt 工程的核心不是花哨技巧，而是通过“明确任务定义”让模型稳定发挥能力，减少模型对模糊指令的随意发挥。
+              </p>
+            </button>
+            <button class="w-full text-left flex gap-3 bg-slate-950/40 hover:bg-slate-800/60 border border-slate-800 rounded-xl px-3 py-2.5 transition">
+              <div class="text-[10px] font-mono px-2 py-1 rounded-full bg-slate-900 text-sky-300 border border-sky-500/40 self-start">03:12</div>
+              <p class="text-xs text-slate-200 leading-relaxed">
+                大多数失败并非模型能力不足，而是开发者误以为“模型能自动读懂上下文”，忽略了明确边界与输入约束的重要性。
+              </p>
+            </button>
+            <button class="w-full text-left flex gap-3 bg-slate-950/40 hover:bg-slate-800/60 border border-slate-800 rounded-xl px-3 py-2.5 transition">
+              <div class="text-[10px] font-mono px-2 py-1 rounded-full bg-slate-900 text-sky-300 border border-sky-500/40 self-start">06:28</div>
+              <p class="text-xs text-slate-200 leading-relaxed">
+                Red Teaming 是在上线前，用极端、不规范或恶意输入系统性测试模型，以暴露平时看不见的失败模式，避免在真实用户场景中“翻车”。
+              </p>
+            </button>
+            <button class="w-full text-left flex gap-3 bg-slate-950/40 hover:bg-slate-800/60 border border-slate-800 rounded-xl px-3 py-2.5 transition">
+              <div class="text-[10px] font-mono px-2 py-1 rounded-full bg-slate-900 text-sky-300 border border-sky-500/40 self-start">09:40</div>
+              <p class="text-xs text-slate-200 leading-relaxed">
+                将任务拆解为结构化步骤，并提供示例，比一句长 prompt 更能提升稳定性，让模型沿着预期路径一步步完成任务。
+              </p>
+            </button>
+            <button class="w-full text-left flex gap-3 bg-slate-950/40 hover:bg-slate-800/60 border border-slate-800 rounded-xl px-3 py-2.5 transition">
+              <div class="text-[10px] font-mono px-2 py-1 rounded-full bg-slate-900 text-sky-300 border border-sky-500/40 self-start">14:02</div>
+              <p class="text-xs text-slate-200 leading-relaxed">
+                在企业级高风险场景中，Prompt 设计要和产品逻辑、业务流程、风控机制一起考虑，而不是“丢给模型一句话就完事”。
+              </p>
+            </button>
+          </div>
+        </div>
+
+        <!-- 学习笔记 -->
+        <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-4 space-y-3">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-violet-500/10 flex items-center justify-center text-xs">④</span>
+              <h2 class="text-xs font-semibold text-slate-100 tracking-wide">我的学习笔记</h2>
+            </div>
+            <span class="text-[10px] text-violet-300 bg-violet-500/10 border border-violet-400/30 px-2 py-0.5 rounded-full">支持 Markdown · 本地/云端保存</span>
+          </div>
+          <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-3 text-xs text-slate-200 leading-relaxed min-h-[120px]">
+            今天的理解：
+            <br>- Prompt 工程要回归任务本质，而不是技巧堆叠
+            <br>- Red Teaming 是企业级 AI 系统的安全基础
+            <br>- 视频里的结构化 prompt 方法，可以直接复用到我们的 YouTube Agent pipeline 里
+          </div>
+          <div class="flex justify-between items-center mt-1">
+            <button class="text-[10px] text-slate-400 hover:text-slate-200 flex items-center gap-1">✏️ 编辑笔记</button>
+            <button class="text-[10px] text-emerald-300 hover:text-emerald-200 flex items-center gap-1">✅ 标记为已学习</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 右侧：Plus 学习模式 / 中英对照区 -->
+      <aside class="space-y-4">
+        <!-- Plus 升级提示 -->
+        <div class="bg-gradient-to-br from-emerald-500/10 via-slate-900 to-slate-950 border border-emerald-500/40 rounded-2xl p-4">
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-xs">⚡</span>
+              <h2 class="text-xs font-semibold text-emerald-200 tracking-wide">中英对照学习模式（Plus Demo）</h2>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500 text-slate-950 font-semibold">Plus</span>
+          </div>
+          <p class="text-[11px] text-emerald-50/90 leading-relaxed mb-3">
+            为开发同学演示：当用户开通 Plus 后，同一条视频如何升级为“系统化英语学习内容”——包含中英对照概要、关键词卡片、金句与情境表达。
+          </p>
+          <div class="flex gap-2 text-[10px]">
+            <span class="px-2 py-1 rounded-full bg-slate-950/60 border border-emerald-400/40 text-emerald-200">中英对照概要</span>
+            <span class="px-2 py-1 rounded-full bg-slate-950/60 border border-emerald-400/40 text-emerald-200">关键词术语卡</span>
+            <span class="px-2 py-1 rounded-full bg-slate-950/60 border border-emerald-400/40 text-emerald-200">英文金句 & 表达</span>
+          </div>
+        </div>
+
+        <!-- 中英对照概要 -->
+        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4 space-y-2">
+          <div class="flex items-center justify-between mb-1">
+            <h3 class="text-[11px] font-semibold text-slate-100">中英对照核心概要</h3>
+            <span class="text-[10px] text-slate-400">可导出为学习卡片</span>
+          </div>
+          <div class="space-y-2 text-[11px]">
+            <div class="bg-slate-950/60 rounded-xl p-2 border border-slate-800">
+              <p class="text-emerald-200 mb-1">Prompt 工程的关键是清晰定义任务，而不是堆技巧。</p>
+              <p class="text-slate-300 italic">Prompt engineering is about clearly defining the task, not piling on clever tricks.</p>
+            </div>
+            <div class="bg-slate-950/60 rounded-xl p-2 border border-slate-800">
+              <p class="text-emerald-200 mb-1">LLM 的失败多来自假设错误，而不是模型能力不足。</p>
+              <p class="text-slate-300 italic">Most failures come from incorrect assumptions, not from model limitations.</p>
+            </div>
+            <div class="bg-slate-950/60 rounded-xl p-2 border border-slate-800">
+              <p class="text-emerald-200 mb-1">Red Teaming 的作用是暴露隐藏的失败模式。</p>
+              <p class="text-slate-300 italic">Red teaming is designed to reveal hidden failure modes.</p>
+            </div>
+            <div class="bg-slate-950/60 rounded-xl p-2 border border-slate-800">
+              <p class="text-emerald-200 mb-1">结构化任务比一句 prompt 更稳定。</p>
+              <p class="text-slate-300 italic">Structured tasks outperform single-shot prompts in reliability.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Keywords 术语卡片 -->
+        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4 space-y-2">
+          <div class="flex items-center justify-between mb-1">
+            <h3 class="text-[11px] font-semibold text-slate-100">Keywords · 术语解释</h3>
+            <span class="text-[10px] text-slate-400">适合做单词卡</span>
+          </div>
+          <div class="space-y-2 text-[11px]">
+            <div class="bg-slate-950/60 rounded-xl p-2 border border-slate-800">
+              <div class="flex justify-between items-center mb-1">
+                <span class="font-semibold text-slate-100">Red Teaming</span>
+                <span class="text-[10px] text-slate-400">风险测试 / 对抗测试</span>
+              </div>
+              <p class="text-slate-300 mb-1">对模型进行系统化压力测试，以发现隐藏风险和异常行为。</p>
+              <p class="text-slate-400 italic">例：We ran red-teaming before deploying the model.</p>
+            </div>
+            <div class="bg-slate-950/60 rounded-xl p-2 border border-slate-800">
+              <div class="flex justify-between items-center mb-1">
+                <span class="font-semibold text-slate-100">Failure Modes</span>
+                <span class="text-[10px] text-slate-400">失败模式</span>
+              </div>
+              <p class="text-slate-300 mb-1">模型在什么情况下、以什么方式稳定地出错。</p>
+              <p class="text-slate-400 italic">例：Understanding failure modes helps improve stability.</p>
+            </div>
+            <div class="bg-slate-950/60 rounded-xl p-2 border border-slate-800">
+              <div class="flex justify-between items-center mb-1">
+                <span class="font-semibold text-slate-100">Task Definition</span>
+                <span class="text-[10px] text-slate-400">任务定义</span>
+              </div>
+              <p class="text-slate-300 mb-1">任务的目标、边界和输入输出要求有多清晰。</p>
+              <p class="text-slate-400 italic">例：Precise task definition reduces ambiguity.</p>
+            </div>
+            <div class="bg-slate-950/60 rounded-xl p-2 border border-slate-800">
+              <div class="flex justify-between items-center mb-1">
+                <span class="font-semibold text-slate-100">Structured Prompting</span>
+                <span class="text-[10px] text-slate-400">结构化提示</span>
+              </div>
+              <p class="text-slate-300 mb-1">将复杂任务拆分为有顺序的步骤，用清晰结构引导模型。</p>
+              <p class="text-slate-400 italic">例：Use structured prompting for reliability.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 英文金句&情境表达 -->
+        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4 space-y-2">
+          <div class="flex items-center justify-between mb-1">
+            <h3 class="text-[11px] font-semibold text-slate-100">英文金句 & 情境表达</h3>
+            <span class="text-[10px] text-slate-400">可直接用于输出</span>
+          </div>
+          <div class="space-y-2 text-[11px]">
+            <div class="bg-slate-950/60 rounded-xl p-2 border border-slate-800">
+              <p class="text-slate-100 mb-1">“LLMs don’t fail because they are dumb. They fail because we assume they know things they actually don’t.”</p>
+              <p class="text-slate-300 mb-1">LLM 的失败不是因为“笨”，而是因为我们假设它们懂很多，事实上并没有。</p>
+              <p class="text-slate-400 italic">应用场景：解释为什么要做 Red Teaming 或加强输入约束时用。</p>
+            </div>
+            <div class="bg-slate-950/60 rounded-xl p-2 border border-slate-800">
+              <p class="text-slate-100 mb-1">“Prompt engineering is less about magic and more about reducing ambiguity.”</p>
+              <p class="text-slate-300 mb-1">Prompt 工程不是魔法，而是消除歧义。</p>
+              <p class="text-slate-400 italic">应用场景：对非技术同事解释 Prompt 工作价值时用。</p>
+            </div>
+            <div class="bg-slate-950/60 rounded-xl p-2 border border-slate-800">
+              <p class="text-slate-100 mb-1">“Red teaming exposes what your model will fail at before your users do.”</p>
+              <p class="text-slate-300 mb-1">Red Teaming 能让你先于用户发现模型会在哪些地方出错。</p>
+              <p class="text-slate-400 italic">应用场景：推动企业内部增加测试预算或流程时用。</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </div>
+</body>
+</html>
